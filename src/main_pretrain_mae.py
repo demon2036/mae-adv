@@ -34,7 +34,9 @@ from utils import AverageMeter, save_checkpoint_in_background
 import orbax.checkpoint as ocp
 import os
 
-warnings.filterwarnings("ignore")
+jax.distributed.initialize()
+
+# warnings.filterwarnings("ignore")
 
 
 def evaluate(state: TrainState, dataloader: DataLoader) -> dict[str, float]:
@@ -172,6 +174,5 @@ if __name__ == "__main__":
     parser.add_argument("--ipaddr")
     parser.add_argument("--hostname")
     parser.add_argument("--output-dir", default=".")
-    jax.distributed.initialize()
     # print(parser.parse_args())
     main(parser.parse_args())
