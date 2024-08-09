@@ -229,9 +229,9 @@ def train_and_evaluate(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--pretrained-model", type=str,
-                        default='checkpoints/mae-deit-s2-32-in1k-1600ep-d8-ema')
+                        default='checkpoints/jax/mae-deit-t16-224-in1k-800ep-d1-ema')
     parser.add_argument("--checkpoint", type=str,
-                        default='checkpoints/mae-deit-s2-32-in1k-1600ep-d8-ema'
+                        default='checkpoints/torch/mae-deit-t16-224-in1k-800ep-d1-ema'
                                 '.pth')
 
     # parser.add_argument("--pretrained-model", type=str,

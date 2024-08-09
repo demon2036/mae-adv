@@ -157,7 +157,7 @@ def benchmark(
 
     clean_x_test, clean_y_test = load_clean_dataset(dataset_, n_examples,
                                                     data_dir, prepr)
-
+    #ToDO :replace your Attack
     accuracy = clean_accuracy(model,
                               clean_x_test,
                               clean_y_test,
@@ -294,6 +294,8 @@ def main(args: Namespace) -> None:
     torch.cuda.manual_seed(args.seed)
     np.random.seed(args.seed)
     random.seed(args.seed)
+
+    # ToDO :replace your model
 
     model = load_model(args.model_name,
                        model_dir=args.model_dir,
